@@ -47,17 +47,13 @@ export default function Navbar() {
               data-bs-toggle="dropdown"
               id="profileDropdown"
             >
-              <img src="template/images/faces/face5.jpg" alt="profile" />
-              <span className="nav-profile-name">Louis Barnett</span>
+              <img src="template/images/faces/face1.jpg" alt="profile" />
+              <span className="nav-profile-name">Krishanathep.J</span>
             </a>
             <div
               className="dropdown-menu dropdown-menu-right navbar-dropdown"
               aria-labelledby="profileDropdown"
             >
-              <a className="dropdown-item">
-                <i className="mdi mdi-settings text-primary" />
-                Settings
-              </a>
               <a className="dropdown-item">
                 <i className="mdi mdi-logout text-primary" />
                 Logout
