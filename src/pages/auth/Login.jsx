@@ -2,72 +2,78 @@ import React from "react";
 
 export default function login() {
   return (
-    <div className="container-scroller">
-      <div className="container-fluid page-body-wrapper full-page-wrapper">
-        <div className="content-wrapper d-flex align-items-center auth px-0">
-          <div className="row w-100 mx-0">
-            <div className="col-lg-4 mx-auto">
-              <div className="auth-form-light text-left py-5 px-4 px-sm-5">
-                <div className="brand-logo">
-                  <img src="template/images/logo.svg" alt="logo" />
+    <div className="hold-transition login-page">
+      <div className="login-box">
+        <div className="login-logo">
+          <a href="../../index2.html">
+            <b>Admin</b>LTE
+          </a>
+        </div>
+        {/* /.login-logo */}
+        <div className="card">
+          <div className="card-body login-card-body">
+            <p className="login-box-msg">Sign in to start your session</p>
+            <form action="../../index3.html" method="post">
+              <div className="input-group mb-3">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                />
+                <div className="input-group-append">
+                  <div className="input-group-text">
+                    <span className="fas fa-envelope" />
+                  </div>
                 </div>
-                {/* <h4>Hello! let's get started</h4>
-                <h6 className="font-weight-light">Sign in to continue.</h6> */}
-                <form className="pt-3">
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      className="form-control form-control-lg"
-                      id="exampleInputEmail1"
-                      placeholder="Username"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="password"
-                      className="form-control form-control-lg"
-                      id="exampleInputPassword1"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <div className="mt-3">
-                    <a
-                      className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                      href="../../index.html"
-                    >
-                      SIGN IN
-                    </a>
-                  </div>
-                  {/* <div className="my-2 d-flex justify-content-between align-items-center">
-                    <div className="form-check">
-                      <label className="form-check-label text-muted">
-                        <input type="checkbox" className="form-check-input" />
-                        Keep me signed in
-                      </label>
-                    </div>
-                    <a href="#" className="auth-link text-black">
-                      Forgot password?
-                    </a>
-                  </div>
-                  <div className="mb-2">
-                    <button
-                      type="button"
-                      className="btn btn-block btn-facebook auth-form-btn"
-                    >
-                      <i className="mdi mdi-facebook me-2" />
-                      Connect using facebook
-                    </button>
-                  </div>
-                  <div className="text-center mt-4 font-weight-light">
-                    Don't have an account?{"{"}" "{"}"}
-                    <a href="register.html" className="text-primary">
-                      Create
-                    </a>
-                  </div> */}
-                </form>
               </div>
+              <div className="input-group mb-3">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                />
+                <div className="input-group-append">
+                  <div className="input-group-text">
+                    <span className="fas fa-lock" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-8">
+                  <div className="icheck-primary">
+                    <input type="checkbox" id="remember" />
+                    <label htmlFor="remember">Remember Me</label>
+                  </div>
+                </div>
+                {/* /.col */}
+                <div className="col-4">
+                  <button type="submit" className="btn btn-primary btn-block">
+                    Sign In
+                  </button>
+                </div>
+                {/* /.col */}
+              </div>
+            </form>
+            {/* <div className="social-auth-links text-center mb-3">
+              <p>- OR -</p>
+              <a href="#" className="btn btn-block btn-primary">
+                <i className="fab fa-facebook mr-2" /> Sign in using Facebook
+              </a>
+              <a href="#" className="btn btn-block btn-danger">
+                <i className="fab fa-google-plus mr-2" /> Sign in using Google+
+              </a>
             </div>
+           
+            <p className="mb-1">
+              <a href="forgot-password.html">I forgot my password</a>
+            </p>
+            <p className="mb-0">
+              <a href="register.html" className="text-center">
+                Register a new membership
+              </a>
+            </p> */}
           </div>
+          {/* /.login-card-body */}
         </div>
       </div>
     </div>

@@ -1,20 +1,14 @@
-import Navbar from '../components/Navbar'
-import Sidebar from '../components/Sidebar'
-import Footer from '../components/Footer'
+// import Navbar from "./Navbar";
+// import Sidebar from "./Sidebar";
+// import Footer from "./Footer";
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
-    <div className="container-scroller">
-    <Navbar/>
-      <div className="container-fluid page-body-wrapper">
-        <Sidebar/>
-        <div className="main-panel">
-        <div className="content-wrapper">
-          <main>{children}</main>
-        </div>  
-          <Footer/>
-        </div>
-      </div>
-    </div>
+    <>
+      {/* <Navbar />
+      <Sidebar /> */}
+      <main>{children}</main>
+      {/* <Footer /> */}
+    </>
   );
 }
