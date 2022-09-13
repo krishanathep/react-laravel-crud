@@ -1,24 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function login() {
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const data = { username, password };
+
+    const resusetOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+
+    await fetch("https://www.melivecode.com/api/login", resusetOptions)
+      .then((res) => res.json())
+      .then((res) => {
+        if ("accessToken" in res) {
+          alert("ยินดีต้อนรับสู่ระบบ");
+          localStorage.setItem("accessToken", res["accessToken"]);
+          localStorage.setItem("user", JSON.stringify(res["user"]));
+          window.location.href = "/";
+        } else {
+          alert("ข้อมูลไม่ถูกต้อง");
+        }
+      });
+    }
+
   return (
     <div className="hold-transition login-page">
       <div className="login-box">
         <div className="login-logo">
-          <a href="../../index2.html">
+          <Link to="/">
             <b>Admin</b>LTE
-          </a>
+          </Link>
         </div>
-        {/* /.login-logo */}
-        <div className="card">
+        <div className="card card-primary card-outline">
+          <div className="card-header" align="center">
+            Sign in to start your session
+          </div>
           <div className="card-body login-card-body">
-            <p className="login-box-msg">Sign in to start your session</p>
-            <form action="../../index3.html" method="post">
+            <form onSubmit={handleSubmit}>
               <div className="input-group mb-3">
                 <input
-                  type="email"
+                  type="username"
                   className="form-control"
-                  placeholder="Email"
+                  placeholder="Username"
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -31,6 +64,9 @@ export default function login() {
                   type="password"
                   className="form-control"
                   placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -40,40 +76,19 @@ export default function login() {
               </div>
               <div className="row">
                 <div className="col-8">
-                  <div className="icheck-primary">
+                  {/* <div className="icheck-primary">
                     <input type="checkbox" id="remember" />
                     <label htmlFor="remember">Remember Me</label>
-                  </div>
+                  </div> */}
                 </div>
-                {/* /.col */}
                 <div className="col-4">
                   <button type="submit" className="btn btn-primary btn-block">
                     Sign In
                   </button>
                 </div>
-                {/* /.col */}
               </div>
             </form>
-            {/* <div className="social-auth-links text-center mb-3">
-              <p>- OR -</p>
-              <a href="#" className="btn btn-block btn-primary">
-                <i className="fab fa-facebook mr-2" /> Sign in using Facebook
-              </a>
-              <a href="#" className="btn btn-block btn-danger">
-                <i className="fab fa-google-plus mr-2" /> Sign in using Google+
-              </a>
-            </div>
-           
-            <p className="mb-1">
-              <a href="forgot-password.html">I forgot my password</a>
-            </p>
-            <p className="mb-0">
-              <a href="register.html" className="text-center">
-                Register a new membership
-              </a>
-            </p> */}
           </div>
-          {/* /.login-card-body */}
         </div>
       </div>
     </div>
