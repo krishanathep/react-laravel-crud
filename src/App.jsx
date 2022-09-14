@@ -5,6 +5,7 @@ import WithNavbar from './layouts/WithNavbar';
 import Login from './pages/auth/Login'
 import Dashboard from './pages/Dashboard'
 import Starter from './pages/starter'
+import Users from './pages/users'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route element={<WithNavbar/>}>
           <Route path="/" element={<Dashboard/>}/>
           <Route path="/starter" element={<Starter/>} />
+          <Route path="/users" element={<Users/>} />
           </Route>
         </Routes>
       </Router>

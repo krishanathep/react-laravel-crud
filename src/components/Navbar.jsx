@@ -1,7 +1,6 @@
 import React from "react";
 
 function signOut() {
-  //window.confirm("Are your sure you want to Signout?");
   localStorage.removeItem("accessToken");
   localStorage.removeItem("user");
   window.location.href = "/login";
